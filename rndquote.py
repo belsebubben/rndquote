@@ -4,11 +4,12 @@ import os
 import random
 
 quotefiles = ("kapten_haddock", "twin_peaks")
+location = os.path.dirname(os.path.realpath(__file__))
 
 def main():
     quotes = []
     for qf in quotefiles:
-        qfile = open(qf, "r")
+        qfile = open(location + os.path.sep + qf, "r")
         quotes.extend(qfile.readlines())
         qfile.close()
     quote = random.choice(quotes)
